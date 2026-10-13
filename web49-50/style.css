@@ -1,0 +1,699 @@
+/*Базові стилі*/ 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body {
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+/*Контейнер нашого телефончика*/
+.phone {
+  width: 375px;
+  height: 667px;
+  background: #f4fbf7;
+  border: 10px solid #222;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  flex-shrink: 0;
+  position: relative;
+}
+/*Створення екранчика і шапка*/
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+.header,
+.sub-header {
+  background: #004d33;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  flex-shrink: 0;
+}
+.header {
+  height: 56px;
+  justify-content: space-between;
+}
+.sub-header {
+  height: 48px;
+  gap: 12px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.logo {
+  font-weight: bold;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.icons {
+  display: flex;
+  gap: 14px;
+  opacity: 0.9;
+}
+.back-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  padding: 0 4px;
+}
+.sub-header-title {
+  font-size: 15px;
+  font-weight: bold;
+}
+/*Контент і екран про програму*/
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  overflow-y: auto;
+}
+.about-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  gap: 16px;
+  color: #004d33;
+}
+.about-content h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.about-content p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #2e5a4c;
+}
+.version {
+  font-size: 12px;
+  color: #5a8a7c;
+}
+/*Список відправлень і картки*/
+/* Контейнер прокручування списку карток*/
+.scroll-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 80px;
+}
+/*Картки відправлень і їхні налаштування*/
+.card {
+  background: #fff;
+  border: 1px solid #d1e7dd;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+.card-party {
+  font-size: 9px;
+  color: #004d33;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.card-party b {
+  font-size: 12px;
+  color: #222;
+}
+.card-content-row {
+  font-size: 9px;
+  color: #004d33;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card-content-row b {
+  font-size: 12px;
+  color: #004d33;
+}
+.card-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 8px;
+  font-size: 9px;
+  color: #004d33;
+}
+.card-footer-row b {
+  font-size: 11px;
+  color: #222;
+}
+.badge {
+  background: #004d33;
+  color: #fff;
+  font-size: 9px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.badge-light {
+  background: #e8f5ec;
+  color: #2e5a4c;
+}
+/* Зафіксована кнопка створити в правому куті екрану*/
+.btn-create {
+  background: #004d33;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,77,51,0.3);
+  display: flex;
+  align-items: center;
+}
+/*Екран для деталей відправлення*/
+.section-title {
+  font-size: 11px;
+  font-weight: bold;
+  color: #004d33;
+  margin-top: 6px;
+}
+.details-card {
+  gap: 6px;
+  font-size: 12px;
+  color: #222;
+}
+.details-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+.form-content {
+  gap: 8px;
+  padding-bottom: 24px;
+}
+.form-content label {
+  font-size: 10px;
+  font-weight: bold;
+  color: #555;
+  margin-top: 4px;
+}
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d1e7dd;
+  border-radius: 6px;
+  font-size: 11px;
+  background: #fff;
+  color: #333;
+}
+.form-row {
+  display: flex;
+  gap: 8px;
+}
+.form-row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+/*Статус*/
+.status-box {
+  background: #e8f5ec;
+  border: 1px solid #c8e6c9;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 4px 0;
+}
+.status-box span {
+  font-size: 9px;
+  color: #666;
+}
+.status-box b {
+  font-size: 12px;
+  color: #004d33;
+}
+/*Загальні кнопочки*/
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-danger,
+.btn-link {
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+}
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid #004d33;
+  border-radius: 8px;
+  color: #004d33;
+}
+.btn:hover {
+  background: #eaf5f0;
+}
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: #004d33;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+}
+.btn-secondary {
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  color: #004d33;
+  border: 1px solid #004d33;
+  border-radius: 6px;
+}
+.btn-danger {
+  width: 100%;
+  padding: 12px;
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+}
+.btn-link {
+  background: none;
+  border: none;
+  color: #004d33;
+  padding: 6px;
+}
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 100;
+}
+.modal-card {
+  background: #f4fbf7;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+.modal-icon {
+  width: 40px;
+  height: 40px;
+  background: #fde8e8;
+  color: #d32f2f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #f8d7d7;
+}
+.modal-card h3 {
+  font-size: 16px;
+  color: #004d33;
+}
+.modal-card p {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.4;
+}
+/*Основна картка деталей*/
+.details-main-card {
+  gap: 10px;
+  padding: 14px;
+}
+.section-header-title {
+  font-size: 10px;
+  font-weight: bold;
+  color: #004d33;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+.green-marker {
+  width: 3px;
+  height: 10px;
+  background: #004d33;
+  border-radius: 2px;
+}
+.details-border-row {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+/*Блок з фінансами всередині форми*/
+.inner-finance-box {
+  background: #f4fbf7;
+  border: 1px solid #d1e7dd;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.finance-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: #004d33;
+}
+.finance-row b {
+  font-size: 12px;
+  color: #222;
+}
+/*Збільшена ціна*/
+.large-price {
+  color: #004d33 !important;
+  font-size: 13px !important;
+}
+/* Компактний контейнер форми*/
+.form-container {
+  padding: 4px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 100%;
+  overflow-y: auto;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.form-label {
+  font-size: 7px;
+  font-weight: 700;
+  color: #004d33;
+  letter-spacing: 0.5px;
+}
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #e0f2eb;
+  border-radius: 6px;
+  padding: 0 8px;
+  height: 28px;
+  box-shadow: 0 1px 2px rgba(0, 77, 51, 0.03);
+}
+.input-wrapper svg {
+  flex-shrink: 0;
+  margin-right: 6px;
+  width: 11px;
+  height: 11px;
+}
+/*Текстове поле інпута*/
+.form-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 9px;
+  color: #004d33;
+  font-family: inherit;
+}
+/*Підказка для інпута*/
+.form-input::placeholder {
+  color: #a3c2b4;
+}
+.form-row-double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.form-status-box {
+  display: flex;
+  align-items: center;
+  background-color: #eaf5f0;
+  border: 1px solid #cce8dc;
+  border-radius: 6px;
+  padding: 4px 8px;
+  gap: 6px;
+  margin: 2px 0;
+}
+.form-status-box svg {
+  flex-shrink: 0;
+  width: 11px;
+  height: 11px;
+}
+.status-title {
+  font-size: 6px;
+  font-weight: 700;
+  color: #004d33;
+  letter-spacing: 0.5px;
+  display: block;
+}
+/*Опис для статусу форми*/
+.status-desc {
+  font-size: 9px;
+  font-weight: 600;
+  color: #004d33;
+}
+/*Дії в формі*/
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 2px;
+}
+.btn-save {
+  background-color: #004d33;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  height: 28px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-save:hover {
+  background-color: #003322;
+}
+.btn-cancel {
+  background-color: #ffffff;
+  color: #004d33;
+  border: 1px solid #004d33;
+  border-radius: 6px;
+  height: 28px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-cancel:hover {
+  background-color: #f2f9f6;
+}
+/*Кнопка для збереження в деталях*/
+#details-screen .btn-save {
+  margin-top: 4px;
+  width: 100%;
+  background-color: #004d33;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  height: 30px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+/*Наведення на кнопку збереження в деталях*/
+#details-screen .btn-save:hover {
+  background-color: #003322;
+}
+/*Іконка для видалення*/
+.btn-delete-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.btn-delete-icon:hover {
+  background-color: rgba(211, 47, 47, 0.1);
+}
+/*Шторка для видалення*/
+.delete-sheet {
+  background-color: #f0f7f4;
+  width: 100%;
+  max-width: 375px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 12px 24px 32px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: slideUp 0.3s ease-out;
+}
+/*Анімація для шторки, яка з'являється*/
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.sheet-indicator {
+  width: 36px;
+  height: 4px;
+  background-color: #c0d1c7;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+.warning-icon-wrap {
+  width: 56px;
+  height: 56px;
+  background-color: #fde8e8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.delete-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #002b1c;
+  margin: 0 0 8px 0;
+}
+.delete-desc {
+  font-size: 13px;
+  color: #556b60;
+  line-height: 1.4;
+  margin: 0 0 24px 0;
+  padding: 0 12px;
+}
+.btn-delete-action {
+  width: 100%;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+/*Кнопка видалити в шторці*/
+.btn-delete-action:hover {
+  background-color: #b71c1c;
+}
+/*Кнопка скасування в шторці*/
+.btn-cancel-action {
+  background: none;
+  border: none;
+  color: #004d33;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px;
+}
+.btn-cancel-action:hover {
+  opacity: 0.8;
+}
+/*Валідація і помилки*/
+.input-wrapper.input-error,
+.form-input.input-error {
+  border-color: #e53935 !important;
+  background-color: #fef8f8 !important;
+}
+.field-error-icon {
+  display: none;
+  color: #e53935;
+  margin-left: auto;
+  margin-right: 0;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+}
+/*Іконка помилки*/
+.input-wrapper.input-error .field-error-icon {
+  display: block;
+}
+.field-error-text {
+  color: #e53935;
+  font-size: 7px;
+  font-weight: 600;
+  margin-top: 1px;
+  margin-left: 2px;
+  display: none;
+}
+.field-error-text.visible {
+  display: block;
+}
+.form-status-box.error {
+  background-color: #fef8f8;
+  border-color: #ffcdd2;
+  color: #e53935;
+}
+/*Текст при помилці*/
+.form-status-box.error .status-title,
+.form-status-box.error .status-desc {
+  color: #e53935;
+}
+/*Помилка на формі*/
+.form-status-box.error svg {
+  stroke: #e53935;
+}
+/*Успішний статус на формі*/
+.form-status-box.success {
+  background-color: #eaf5f0;
+  border-color: #cce8dc;
+  color: #004d33;
+}

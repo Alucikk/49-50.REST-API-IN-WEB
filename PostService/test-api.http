@@ -1,0 +1,84 @@
+### Отримання повного списку
+GET http://localhost:5000/postings
+
+### Отримання запису по ід
+GET http://localhost:5000/postings/1
+
+### Перевіряємо неіснуючий ід
+GET http://localhost:5000/postings/999
+
+### Створюємо нове відправлення
+POST http://localhost:5000/postings
+Content-Type: application/json
+
+{
+  "id": 1,
+  "from": "Луцьк",
+  "to": "Стрий",
+  "content": "Ноутбуки",
+  "deliveryType": 1,
+  "weight": 5.5,
+  "width": 1.3,
+  "height": 15.0,
+  "depth": 2.5,
+  "value": 50000.0,
+  "price": 300
+}
+
+### Перевірка, чи з'явився новий запис
+GET http://localhost:5000/postings
+
+### Створюємо нове відправлення
+POST http://localhost:5000/postings
+Content-Type: application/json
+
+{
+  "id": 2,
+  "from": "Рівне",
+  "to": "Житомир",
+  "content": "Книги",
+  "deliveryType": 2,
+  "weight": 1.5,
+  "price": 700.0
+}
+
+### Перевірка, чи з'явився новий запис
+GET http://localhost:5000/postings/2
+
+### Редагування наявного запису
+PUT http://localhost:5000/postings/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "from": "Луцьк",
+  "to": "Трускавець",
+  "content": "Ноутбуки",
+  "deliveryType": 1,
+  "weight": 5.5,
+  "price": 50000.0
+}
+### Підтверджуємо оновлення
+GET http://localhost:5000/postings/1
+
+### Видалення запису
+DELETE http://localhost:5000/postings/1
+
+### Підтвердження видалення
+GET http://localhost:5000/postings/1
+
+### Створення контактної особи 
+POST http://localhost:5000/contacts
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Стоянова Алла",
+  "phoneNumber": "+380980034709",
+  "email": "stoianovaallaua@gmail.com"
+}
+### Отримання списку контактів 
+GET http://localhost:5000/contacts
+
+### Отримання відправлень, перевіряємо чи не потрепили сюди контакти
+GET http://localhost:5000/postings

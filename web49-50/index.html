@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=375, initial-scale=1.0">
+  <title>PostService</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="phone">
+<!--Головний екран-->
+  <div id="home-screen" class="screen">
+    <header class="header">
+      <div class="logo">
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+             fill="none" stroke="white" stroke-width="2.2" 
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 
+                     2 0 0 0-2 0l-7 4A2 2 0 0 0 3 
+                     8v8a2 2 0 0 0 1 1.73l7 4a2 2 
+                     0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+            </path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        PostService
+      </div>
+      <div class="icons">
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+             fill="none" stroke="white" stroke-width="2" 
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+             fill="none" stroke="white" stroke-width="2" 
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+    </header>
+    <main class="main">
+      <button class="btn" onclick="showScreen('list-screen')">Список відправлень</button>
+      <button class="btn" onclick="showScreen('about-screen')">Про програму</button>
+    </main>
+  </div>
+<!--Про програму -->
+  <div id="about-screen" class="screen" style="display: none;">
+    <header class="header">
+      <div class="logo">
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+             fill="none" stroke="white" stroke-width="2.2" 
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 
+                     2 0 0 0-2 0l-7 4A2 2 0 0 0 3 
+                     8v8a2 2 0 0 0 1 1.73l7 4a2 2 
+                     0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+            </path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        PostService
+      </div>
+      <div class="icons">
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+             fill="none" stroke="white" stroke-width="2" 
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+             fill="none" stroke="white" stroke-width="2" 
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+    </header>
+    <div class="sub-header">
+      <button class="back-btn" onclick="showScreen('home-screen')">‹</button>
+      <span class="sub-header-title">Про програму</span>
+    </div>
+    <main class="about-content">
+      <h2>PostService Mobile</h2>
+      <p>Дана програма розроблена для доставки ваших замовлень</p>
+      <p>Розроблено Стояновою Аллою</p>
+      <span class="version">v1.0.0</span>
+    </main>
+  </div>
+<!--Список відправлень-->
+  <div id="list-screen" class="screen" style="display: none;">
+    <header class="header">
+      <div class="logo">
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+             fill="none" stroke="white" stroke-width="2.2" 
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 
+                  0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 
+                  2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        PostService
+      </div>
+      <div class="icons">
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+             fill="none" stroke="white" stroke-width="2" 
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+             fill="none" stroke="white" stroke-width="2" 
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+    </header>
+    <div class="sub-header">
+      <button class="back-btn" onclick="showScreen('home-screen')">‹</button>
+      <span class="sub-header-title">Список відправлень</span>
+    </div>
+    <main class="scroll-content">
+    </main>
+  </div>
+<!--Деталі відправлення-->
+  <div id="details-screen" class="screen" style="display: none;">
+    <header class="header">
+      <div class="logo">
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+        fill="none" stroke="white" stroke-width="2.2" 
+        stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2
+           2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 
+           4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        PostService
+      </div>
+      <div class="icons">
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+        fill="none" stroke="white" stroke-width="2" 
+        stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+        fill="none" stroke="white" stroke-width="2" 
+        stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+    </header>
+    <div class="sub-header">
+      <button class="back-btn" onclick="showScreen('list-screen')">‹</button>
+      <span class="sub-header-title">Деталі відправлення</span>
+    </div>
+    <main class="main" style="overflow-y: auto;">
+      <div class="card details-main-card">
+        <div class="section-header-title">
+          <span class="green-marker"></span> КОНТАКТНІ ДАНІ
+        </div>
+        <div class="card-row details-border-row">
+          <span class="card-party">
+            <svg width="12" height="12" viewBox="0 0 24 24" 
+            fill="none" stroke="#004d33" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/></svg>
+            ВІДПРАВНИК<br><b id="detail-sender">Олександр Коваленко</b>
+          </span>
+        </div>
+        <div class="card-row" style="border: none; padding-bottom: 0;">
+          <span class="card-party">
+            <svg width="12" height="12" viewBox="0 0 24 24" 
+            fill="none" stroke="#004d33" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/></svg>
+            ОТРИМУВАЧ<br><b id="detail-receiver">Марія Петренко</b>
+          </span>
+        </div>
+      </div>
+      <div class="card details-main-card">
+        <div class="section-header-title">
+          <span class="green-marker"></span> ПАРАМЕТРИ ПОСИЛКИ
+        </div>
+
+        <div class="card-content-row details-border-row" style="padding-bottom: 8px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" 
+          fill="none" stroke="#004d33" stroke-width="2">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7
+           4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 
+           2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+           <line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          <span>ВМІСТ<br><b id="detail-content">Електроніка (ноутбук)</b></span>
+        </div>
+        
+        <div class="card-content-row details-border-row" style="padding-bottom: 8px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" 
+          fill="none" stroke="#004d33" stroke-width="2">
+          <rect x="1" y="3" width="15" height="13"></rect>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+          <circle cx="5.5" cy="18.5" r="2.5"></circle>
+          <circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          <span>ТИП ДОСТАВКИ<br><b id="detail-delivery">Стандарт</b></span>
+        </div>
+
+        <div class="card-footer-row" style="border: none; padding-top: 2px;">
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" 
+            fill="none" stroke="#004d33" stroke-width="2" 
+            style="vertical-align: middle; margin-right: 2px;">
+            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+            <path d="M7 21h10"/><path d="M12 3v18"/>
+            <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+            ВАГА<br><b id="detail-weight">2.5 кг</b>
+          </span>
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" 
+            fill="none" stroke="#004d33" stroke-width="2" 
+            style="vertical-align: middle; margin-right: 2px;">
+            <path d="M3 7V5a2 2 0 0 1 2-2h2"/>
+            <path d="M17 3h2a2 2 0 0 1 2 2v2"/>
+            <path d="M21 17v2a2 2 0 0 1-2 2h-2"/>
+            <path d="M7 21H5a2 2 0 0 1-2-2v-2"/></svg>
+            ГАБАРИТИ<br><b id="detail-dimensions">35x25x5 см</b>
+          </span>
+        </div>
+        <button class="btn-save" onclick="openShipmentForm('edit', editingId)" 
+        style="margin-top: 8px;">РЕДАГУВАТИ</button>
+      </div>
+
+      <div class="card details-main-card">
+        <div class="section-header-title">
+          <span class="green-marker"></span> ФІНАНСОВА ІНФОРМАЦІЯ
+        </div>
+        <div class="inner-finance-box">
+          <div class="finance-row details-border-row">
+            <span class="card-content-row" style="color: #004d33;">
+              <svg width="13" height="13" viewBox="0 0 24 24" 
+              fill="none" stroke="#004d33" stroke-width="2">
+              <rect x="2" y="6" width="20" height="12" rx="2"/>
+              <circle cx="12" cy="12" r="2"/></svg>
+              ОГОЛОШЕНА ЦІННІСТЬ
+            </span>
+            <b id="detail-value">150 грн</b>
+          </div>
+          <div class="finance-row" style="border: none; padding-top: 6px;">
+            <span class="card-content-row" style="color: #004d33;">
+              <svg width="13" height="13" viewBox="0 0 24 24" 
+              fill="none" stroke="#004d33" stroke-width="2">
+              <rect x="2" y="5" width="20" height="14" rx="2"/>
+              <line x1="2" y1="10" x2="22" y2="10"/></svg>
+              <b>ВАРТІСТЬ ДОСТАВКИ</b>
+            </span>
+            <b id="detail-cost" class="large-price">150 грн</b>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+<!--Нове відправлення-->
+  <div id="create-screen" class="screen" style="display: none;">
+    <header class="header">
+      <div class="logo">
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+        fill="none" stroke="white" stroke-width="2.2" 
+        stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 
+          4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        PostService
+      </div>
+      <div class="icons">
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+        fill="none" stroke="white" stroke-width="2" 
+        stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" 
+        fill="none" stroke="white" stroke-width="2" 
+        stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+    </header>
+    <div class="sub-header">
+      <button class="back-btn" onclick="showScreen('list-screen')">‹</button>
+      <span class="sub-header-title">Нове відправлення</span>
+    </div>
+    <main class="main" style="overflow-y: auto;">
+      <div class="form-container">
+        <!--Відправник-->
+        <div class="form-group">
+          <label class="form-label">ВІДПРАВНИК</label>
+          <div class="input-wrapper">
+            <svg width="12" height="12" viewBox="0 0 24 24" 
+            fill="none" stroke="#004d33" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/></svg>
+            <input type="text" id="form-sender" class="form-input" 
+            placeholder="Прізвище, ім'я, по батькові">
+            <svg class="field-error-icon" width="16" height="16" 
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+            stroke-width="2"><circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <div class="field-error-text" id="form-sender-error">Введіть повне ПІБ відправника (мінімум 3 символи)</div>
+        </div>
+
+      <!--Отримувач-->
+        <div class="form-group">
+          <label class="form-label">ОТРИМУВАЧ</label>
+          <div class="input-wrapper">
+            <svg width="12" height="12" viewBox="0 0 24 24" 
+            fill="none" stroke="#004d33" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/></svg>
+            <input type="text" id="form-receiver" class="form-input" 
+            placeholder="Прізвище, ім'я, по батькові">
+            <svg class="field-error-icon" width="16" height="16" 
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+            stroke-width="2"><circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <div class="field-error-text" 
+          id="form-receiver-error">Введіть повне ПІБ отримувача (мінімум 3 символи)</div>
+        </div>
+
+        <!--Вміст-->
+        <div class="form-group">
+          <label class="form-label">ВМІСТ</label>
+          <div class="input-wrapper">
+            <svg width="12" height="12" viewBox="0 0 24 24" 
+            fill="none" stroke="#004d33" stroke-width="2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 
+            4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 
+            2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+            <line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            <input type="text" id="form-content" class="form-input" 
+            placeholder="Наприклад: Одяг, Електроніка">
+            <svg class="field-error-icon" width="16" height="16" 
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+            stroke-width="2"><circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <div class="field-error-text" 
+          id="form-content-error">Опишіть вміст відправлення українською мовою</div>
+        </div>
+       <!--Поле тип доставки з випадаючим списком-->
+        <div class="form-group">
+          <label class="form-label">ТИП ДОСТАВКИ</label>
+          <div class="input-wrapper">
+            <svg width="12" height="12" viewBox="0 0 24 24" 
+            fill="none" stroke="#004d33" stroke-width="2">
+            <rect x="1" y="3" width="15" height="13"></rect>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+            <circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            <select id="form-delivery" class="form-input" 
+            style="appearance: none; -webkit-appearance: none; 
+            background: transparent; cursor: pointer; outline: none;">
+              <option value="" disabled selected>Оберіть тип доставки</option>
+              <option value="Відділення">Відділення</option>
+              <option value="Кур'єр">Кур'єр</option>
+              <option value="Експрес-кур'єр">Експрес-кур'єр</option>
+            </select>
+            <svg class="field-error-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <div class="field-error-text" 
+          id="form-delivery-error">Оберіть тип доставки зі списку</div>
+        </div>
+       <!--Вага і габарити-->
+        <div class="form-row-double">
+          <div class="form-group">
+            <label class="form-label">ВАГА</label>
+            <div class="input-wrapper">
+              <svg width="12" height="12" viewBox="0 0 24 24" 
+              fill="none" stroke="#004d33" stroke-width="2">
+              <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+              <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+              <path d="M7 21h10"/><path d="M12 3v18"/>
+              <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+              <input type="text" id="form-weight" class="form-input" placeholder="0.0 кг">
+            </div>
+            <div class="field-error-text" 
+            id="form-weight-error">Введіть вагу (> 0)</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">ГАБАРИТИ</label>
+            <div class="input-wrapper">
+              <svg width="12" height="12" viewBox="0 0 24 24" 
+              fill="none" stroke="#004d33" stroke-width="2">
+              <path d="M3 7V5a2 2 0 0 1 2-2h2"/>
+              <path d="M17 3h2a2 2 0 0 1 2 2v2"/>
+              <path d="M21 17v2a2 2 0 0 1-2 2h-2"/>
+              <path d="M7 21H5a2 2 0 0 1-2-2v-2"/></svg>
+              <input type="text" id="form-dimensions" 
+              class="form-input" placeholder="Д × Ш × В">
+            </div>
+            <div class="field-error-text" 
+            id="form-dimensions-error">Введіть розміри (ДхШхВ)</div>
+          </div>
+        </div>
+<!--Оголошена цінність-->
+        <div class="form-group">
+          <label class="form-label">ОГОЛОШЕНА ЦІННІСТЬ</label>
+          <div class="input-wrapper">
+            <svg width="12" height="12" viewBox="0 0 24 24" 
+            fill="none" stroke="#004d33" stroke-width="2">
+            <rect x="2" y="6" width="20" height="12" rx="2"/>
+            <circle cx="12" cy="12" r="2"/></svg>
+            <input type="text" id="form-value" 
+            class="form-input" placeholder="0.00 грн">
+            <svg class="field-error-icon" width="16" height="16"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+             stroke-width="2"><circle cx="12" cy="12" r="10"></circle>
+             <line x1="12" y1="8" x2="12" y2="12"></line>
+             <line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <div class="field-error-text" 
+          id="form-value-error">Введіть оголошену цінність</div>
+        </div>
+
+        <div class="form-group" style="display:none;">
+          <input type="text" id="form-cost" class="form-input" value="0">
+        </div>
+
+        <div class="form-status-box" id="formStatusBox">
+          <svg class="form-status-icon" width="12" height="12" 
+          viewBox="0 0 24 24" fill="none" stroke="#004d33" 
+          stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 
+          2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 
+          2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+          <line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          <div>
+            <span class="status-title">СТАТУС ФОРМИ</span>
+            <div class="status-desc" id="formStatusDesc">Готово до збереження</div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-save" id="saveBtn" onclick="saveShipment()">ЗБЕРЕГТИ</button>
+          <button class="btn-cancel" onclick="cancelForm()">СКАСУВАТИ</button>
+        </div>
+      </div>
+    </main>
+  </div>
+<!--Модальна форма видалення-->
+  <div id="delete-modal" class="modal-overlay" style="display: none;">
+    <div class="delete-sheet">
+      <div class="sheet-indicator"></div>
+      <div class="warning-icon-wrap">
+        <svg width="28" height="28" viewBox="0 0 24 24" 
+        fill="none" stroke="#d32f2f" stroke-width="2" 
+        stroke-linecap="round" stroke-linejoin="round">
+          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 
+          2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+      <h3 class="delete-title">Видалити відправлення?</h3>
+      <p class="delete-desc">Ви впевнені, що хочете видалити це відправлення? 
+                             Цю дію неможливо буде скасувати.</p>
+      <button class="btn-delete-action" onclick="confirmDelete()">Видалити</button>
+      <button class="btn-cancel-action" onclick="closeDeleteModal()">Скасувати</button>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

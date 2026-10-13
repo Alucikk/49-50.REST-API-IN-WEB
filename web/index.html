@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Список відправлень</title>
+</head>
+<body>
+    <p id="status">Завантажуємо відправлення.</p>
+    <table>
+        <thead id="table-header">
+    <tr>
+        <th scope="col" x-column="content">Вміст</th>
+        <th scope="col" x-column="from">Відправник</th>
+        <th scope="col" x-column="to">Одержувач</th>
+        <th scope="col" x-column="deliveryType">Тип доставки</th>
+        <th scope="col" x-column="weight">Вага, кг</th>
+        <th scope="col" x-column="width">Ширина, см</th>
+        <th scope="col" x-column="height">Висота, см</th>
+        <th scope="col" x-column="depth">Довжина, см</th>
+        <th scope="col" x-column="value">Оголошена вартість</th>
+        <th scope="col" x-column="price">Ціна доставки</th>
+    </tr>
+        </thead>
+        <tbody id="postings">
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
